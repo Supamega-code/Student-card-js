@@ -1,0 +1,46 @@
+<!-- student-card.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Student Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Student Card</h2>
+        <p><strong>Name:</strong> <span id="studentName"></span></p>
+        <p><strong>ID Number:</strong> <span id="studentId"></span></p>
+        <p><strong>Student Number:</strong> <span id="studentNumber"></span></p>
+    </div>
+
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Populate the student card with data from the query string
+        document.getElementById("studentName").textContent = getQueryParam('name');
+        document.getElementById("studentId").textContent = getQueryParam('id');
+        document.getElementById("studentNumber").textContent = getQueryParam('student');
+    </script>
+</body>
+</html>
